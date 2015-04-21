@@ -8,6 +8,7 @@
  * Author URI: http://salferrarello.com/
  * Text Domain: bootstrap-genesis-fixed-nav
  * Domain Path: /languages
+ * GitHub Plugin URI: https://github.com/salcode/bootstrap-genesis-fixed-nav
  */
 
 // If this file is called directly, abort.
