@@ -1,0 +1,23 @@
+body {
+	padding-top: 70px;
+}
+body.admin-bar {
+	padding-top: 72px;
+}
+body.admin-bar .bsg-navbar-fixed-top {
+	top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+	body.admin-bar {
+		padding-top: 72px;
+	}
+	body.admin-bar .bsg-navbar-fixed-top {
+		top: 46px;
+	}
+}
+@media screen and (max-width: 600px) {
+	body.admin-bar .bsg-navbar-fixed-top.bsg-navbar-fixed-top-slide-up-after-admin-bar {
+		top: 0;
+	}
+}
