@@ -2,9 +2,10 @@ body {
 	padding-top: 70px;
 }
 body.admin-bar {
-	padding-top: 72px;
+	padding-top: 71px;
 }
-body.admin-bar .bsg-navbar-fixed-top {
+body.admin-bar .navbar.affix-top,
+body.admin-bar .navbar.affix {
 	top: 32px;
 }
 
@@ -12,12 +13,13 @@ body.admin-bar .bsg-navbar-fixed-top {
 	body.admin-bar {
 		padding-top: 72px;
 	}
-	body.admin-bar .bsg-navbar-fixed-top {
+	body.admin-bar .navbar.affix-top,
+	body.admin-bar .navbar.affix {
 		top: 46px;
 	}
 }
 @media screen and (max-width: 600px) {
-	body.admin-bar .bsg-navbar-fixed-top.bsg-navbar-fixed-top-slide-up-after-admin-bar {
+	body.admin-bar .navbar.affix {
 		top: 0;
 	}
 }

@@ -23,7 +23,7 @@ class Bootstrap_Genesis_Fixed_Nav {
 	}
 
 	public function modify_nav_class( $classes_to_add ) {
-		$classes_to_add['nav-primary'] = 'navbar navbar-default navbar-fixed-top bsg-navbar-fixed-top';
+		$classes_to_add['nav-primary'] = 'navbar navbar-default navbar-fixed-top';
 		return $classes_to_add;
 	}
 
