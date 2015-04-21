@@ -50,7 +50,7 @@ class Bootstrap_Genesis_Fixed_Nav {
 	 *                the affix behavior
 	 */
 	public function add_boot_strap_affix_markup( $markup ) {
-		$markup = rtrim( $markup, ">" ) . 'data-spy="affix" data-offset-top="60">';
+		$markup = rtrim( $markup, ">" ) . 'data-spy="affix" data-offset-top="32">';
 		return $markup;
 	}
 }
