@@ -19,6 +19,7 @@ class Bootstrap_Genesis_Fixed_Nav {
 	public function __construct() {
 		add_filter( 'bsg-classes-to-add', array( $this, 'modify_nav_class' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_css' ) );
+		add_filter( 'genesis_markup_nav-primary_output',  array( $this, 'add_boot_strap_affix_markup' ) );
 	}
 
 	public function modify_nav_class( $classes_to_add ) {
@@ -36,6 +37,22 @@ class Bootstrap_Genesis_Fixed_Nav {
 		);
 	}
 
+	/**
+	 * Add Bootstrap Affix attributes to html tag
+	 * See http://getbootstrap.com/javascript/#affix
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $markup Rendered output for opening html tag
+	 *
+	 * @return string Modified version of the opening html tag
+	 *                which now includes the data attributes to trigger
+	 *                the affix behavior
+	 */
+	public function add_boot_strap_affix_markup( $markup ) {
+		$markup = rtrim( $markup, ">" ) . 'data-spy="affix" data-offset-top="60">';
+		return $markup;
+	}
 }
 
 add_action( 'after_setup_theme', 'bootstrap_genesis_fixed_nav' );
