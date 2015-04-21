@@ -16,6 +16,13 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 class Bootstrap_Genesis_Fixed_Nav {
+
+	/**
+	 * Setup filters and actions to make the primary nav fixed to the top
+	 * of the screen
+	 *
+	 * @since 1.0.0
+	 */
 	public function __construct() {
 		add_filter( 'bsg-classes-to-add', array( $this, 'modify_nav_class' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_css' ) );
@@ -23,13 +30,27 @@ class Bootstrap_Genesis_Fixed_Nav {
 		add_filter( 'option_hash_link_scroll_offset', array( $this, 'option_hash_link_scroll_offset' ) );
 	}
 
+	/**
+	 * Modify primary nav CSS classes for .navbar-fixed-top
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param key value array of context and classes to be applied
+	 *
+	 * @return key value array of context and classes to be applied with
+	 *                   with modified values for nav-primary
+	 */
 	public function modify_nav_class( $classes_to_add ) {
 		$classes_to_add['nav-primary'] = 'navbar navbar-default navbar-fixed-top';
 		return $classes_to_add;
 	}
 
+	/**
+	 * Enqueue CSS for fixed primary nav
+	 *
+	 * @since 1.0.0
+	 */
 	public function load_css() {
-		error_log( 'load_css' );
 		wp_enqueue_style(
 			'bsg-fixed-nav',
 			plugins_url( 'assets/bsg-fixed-nav.css', __FILE__ ),
@@ -83,5 +104,3 @@ add_action( 'after_setup_theme', 'bootstrap_genesis_fixed_nav' );
 function bootstrap_genesis_fixed_nav() {
 	new Bootstrap_Genesis_Fixed_Nav();
 }
-
-

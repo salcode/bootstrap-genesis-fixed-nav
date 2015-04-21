@@ -1,4 +1,6 @@
-# bootstrap-genesis-fixed-nav
+Bootstrap Genesis Fixed Nav Plugin
+==================================
+
 Plugin to make the primary nav fixed.  Requires the Bootstrap Genesis theme.
 
 Fix Anchor Tag Link Scroll
