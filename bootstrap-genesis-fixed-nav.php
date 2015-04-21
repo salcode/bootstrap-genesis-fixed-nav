@@ -20,6 +20,7 @@ class Bootstrap_Genesis_Fixed_Nav {
 		add_filter( 'bsg-classes-to-add', array( $this, 'modify_nav_class' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_css' ) );
 		add_filter( 'genesis_markup_nav-primary_output',  array( $this, 'add_boot_strap_affix_markup' ) );
+		add_filter( 'option_hash_link_scroll_offset', array( $this, 'option_hash_link_scroll_offset' ) );
 	}
 
 	public function modify_nav_class( $classes_to_add ) {
@@ -35,6 +36,28 @@ class Bootstrap_Genesis_Fixed_Nav {
 			'bsg_combined_css',
 			'1.0.0'
 		);
+	}
+
+	/**
+	 * Override offset value for lugin Hash Link Scroll Offset
+	 * https://github.com/WebDevStudios/Hash-Link-Scroll-Offset
+	 * offset varies based on whether or not the admin bar is displayed
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string offset value from plugin settings (this value is ignored)
+	 *
+	 * @return string modified offset value to be used when scrolling to
+	 *                anchor. Two different values are returned, depending on
+	 *                whether the admin bar is currently displayed or not
+	 */
+	public function option_hash_link_scroll_offset( $value ) {
+		if ( is_admin_bar_showing() ) {
+			// combined height of navbar and admin bar offset
+			return '93';
+		}
+		// height of navbar offset
+		return '72';
 	}
 
 	/**
