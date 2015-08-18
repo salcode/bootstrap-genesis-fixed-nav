@@ -11,6 +11,10 @@ body.admin-bar .navbar.affix {
 .no-js body.admin-bar .nav-primary {
 	padding-top: 32px;
 }
+.no-js .menu-item-has-children:hover .dropdown-menu,
+.no-js .menu-item-has-children:focus .dropdown-menu {
+	display: block;
+}
 
 @media screen and (max-width: 782px) {
 	body.admin-bar {
