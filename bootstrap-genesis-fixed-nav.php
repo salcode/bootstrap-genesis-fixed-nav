@@ -74,10 +74,6 @@ class Bootstrap_Genesis_Fixed_Nav {
 	 *                whether the admin bar is currently displayed or not
 	 */
 	public function option_hash_link_scroll_offset( $value ) {
-		if ( is_admin_bar_showing() ) {
-			// combined height of navbar and admin bar offset
-			return '93';
-		}
 		// height of navbar offset
 		return '72';
 	}
