@@ -3,6 +3,19 @@ Bootstrap Genesis Fixed Nav Plugin
 
 Plugin to make the primary nav fixed.  Requires the Bootstrap Genesis theme.
 
+Disable Plugin CSS
+--------------------------
+
+You can include the CSS directly in your theme file and disable the plugin CSS.
+The advantage to this method is you eliminate an asset load improving site
+load time.
+
+### Add this to functions.php to disable the plugin CSS
+
+```
+add_filter( 'bootstrap_genesis_fixed_nav_load_css', '__return_false' );
+```
+
 Fix Anchor Tag Link Scroll
 --------------------------
 
@@ -20,3 +33,13 @@ values for the scroll offset (one for with and one for without the admin bar).
 
 If you modify the height of your nav, you will need to change these values
 in the plugin.
+
+Change Log
+--------------------------
+
+### [Unreleased][unreleased]
+- Add filter to avoid loading CSS - this is useful if the CSS is included
+directly in the theme.
+- Remove alternate Hash Link Scroll Offset when is_admin_bar_showing() is
+true (this is now accomodated in the HLSO plugin)
+

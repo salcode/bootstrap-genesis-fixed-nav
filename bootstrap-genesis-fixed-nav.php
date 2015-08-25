@@ -52,12 +52,16 @@ class Bootstrap_Genesis_Fixed_Nav {
 	 * @since 1.0.0
 	 */
 	public function load_css() {
-		wp_enqueue_style(
-			'bsg-fixed-nav',
-			plugins_url( 'assets/bsg-fixed-nav.css', __FILE__ ),
-			'bsg_combined_css',
-			'1.0.0'
-		);
+		if ( apply_filters( 'bootstrap_genesis_fixed_nav_load_css', true ) ) {
+
+			wp_enqueue_style(
+				'bsg-fixed-nav',
+				plugins_url( 'assets/bsg-fixed-nav.css', __FILE__ ),
+				'bsg_combined_css',
+				'1.0.0'
+			);
+
+		}
 	}
 
 	/**
