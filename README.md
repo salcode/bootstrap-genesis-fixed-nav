@@ -37,7 +37,10 @@ in the plugin.
 Change Log
 --------------------------
 
-### [Unreleased][unreleased]
+### [1.1.0][2015-08-26]
+- Add body class .bootstrap-genesis-fixed-nav to target the CSS so it is only
+applied when the plugin is active. This is relevant when adding the CSS to a
+theme in order to reduce asset load
 - Add filter to avoid loading CSS - this is useful if the CSS is included
 directly in the theme.
 - Remove alternate Hash Link Scroll Offset when is_admin_bar_showing() is

@@ -3,7 +3,7 @@
  * Plugin Name: Bootstrap Genesis Fixed Nav
  * Plugin URI:
  * Description: Modifies the Primary Navigation Menu so it is fixed to the top of the page
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Sal Ferrarello
  * Author URI: http://salferrarello.com/
  * Text Domain: bootstrap-genesis-fixed-nav
@@ -29,8 +29,23 @@ class Bootstrap_Genesis_Fixed_Nav {
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_css' ) );
 		add_filter( 'genesis_markup_nav-primary_output',  array( $this, 'add_boot_strap_affix_markup' ) );
 		add_filter( 'option_hash_link_scroll_offset', array( $this, 'option_hash_link_scroll_offset' ) );
+		add_filter( 'body_class', array( $this, 'add_body_class' ) );
 	}
 
+	/**
+	 * Add body class .bootstrap-genesis-fixed-nav
+	 *
+	 * This class allows us to target the CSS so it is only applied when
+	 * this plugin is active. This is particularly helpful when moving
+	 * the CSS into the Theme but wanting to insure things don't break if
+	 * the plugin is disabled.
+	 *
+	 * @since 1.1.0
+	 */
+	public function add_body_class( $classes ) {
+		$classes[] = 'bootstrap-genesis-fixed-nav';
+		return $classes;
+	}
 	/**
 	 * Modify primary nav CSS classes for .navbar-fixed-top
 	 *
