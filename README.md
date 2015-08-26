@@ -37,7 +37,7 @@ in the plugin.
 Change Log
 --------------------------
 
-### [1.1.0][2015-08-26]
+### [1.1.1][2015-08-26]
 - Add composer.json file
 - Add body class .bootstrap-genesis-fixed-nav to target the CSS so it is only
 applied when the plugin is active. This is relevant when adding the CSS to a

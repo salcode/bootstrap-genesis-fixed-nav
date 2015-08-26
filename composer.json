@@ -1,6 +1,6 @@
 {
 	"name": "salcode/bootstrap-genesis-fixed-nav",
-	"description": "A WordPress plugin to create a fixed nav on a Bootstrap Genesis based theme
+	"description": "A WordPress plugin to create a fixed nav on a Bootstrap Genesis based theme",
 	"type": "wordpress-plugin",
 	"homepage": "https://github.com/salcode/bootstrap-genesis-fixed-nav",
 	"license": "GPL-2.0+",
