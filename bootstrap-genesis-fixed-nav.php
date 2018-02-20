@@ -3,7 +3,7 @@
  * Plugin Name: Bootstrap Genesis Fixed Nav
  * Plugin URI:
  * Description: Modifies the Primary Navigation Menu so it is fixed to the top of the page
- * Version: 1.1.0
+ * Version: 1.1.2
  * Author: Sal Ferrarello
  * Author URI: http://salferrarello.com/
  * Text Domain: bootstrap-genesis-fixed-nav
@@ -27,7 +27,7 @@ class Bootstrap_Genesis_Fixed_Nav {
 	public function __construct() {
 		add_filter( 'bsg-classes-to-add', array( $this, 'modify_nav_class' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_css' ) );
-		add_filter( 'genesis_markup_nav-primary_output',  array( $this, 'add_boot_strap_affix_markup' ) );
+		add_filter( 'genesis_do_nav',  array( $this, 'add_boot_strap_affix_markup' ) );
 		add_filter( 'option_hash_link_scroll_offset', array( $this, 'option_hash_link_scroll_offset' ) );
 		add_filter( 'body_class', array( $this, 'add_body_class' ) );
 	}
@@ -110,7 +110,7 @@ class Bootstrap_Genesis_Fixed_Nav {
 	 *                the affix behavior
 	 */
 	public function add_boot_strap_affix_markup( $markup ) {
-		$markup = rtrim( $markup, ">" ) . 'data-spy="affix" data-offset-top="32">';
+		$markup = '<nav data-spy="affix" data-offset-top="32" ' . ltrim( $markup, '<nav ' );
 		return $markup;
 	}
 }

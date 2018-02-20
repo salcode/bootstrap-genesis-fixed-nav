@@ -37,6 +37,9 @@ in the plugin.
 Change Log
 --------------------------
 
+### [1.1.2][2018-02-20]
+- Corrrect adding data-spy attribute to nav ([#10](https://github.com/salcode/bootstrap-genesis-fixed-nav/issues/10))
+
 ### [1.1.1][2015-08-26]
 - Add composer.json file
 - Add body class .bootstrap-genesis-fixed-nav to target the CSS so it is only
